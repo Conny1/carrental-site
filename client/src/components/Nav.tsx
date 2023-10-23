@@ -30,17 +30,23 @@ const Button = styled.button``;
 const Nav = () => {
   return (
     <Container>
-      <Logo>
-        <img src={logo} alt="logo" />
-      </Logo>
-      <Section2>
-        <Button>Book a car</Button>
+      <Link to="/">
+        <Logo>
+          <img src={logo} alt="logo" />
+        </Logo>
+      </Link>
 
-        <Button>Rent a car</Button>
+      <Section2>
+        <Link to="/search">
+          <Button>Book a car</Button>
+        </Link>
+
+        <Link to="/addorupdate">
+          <Button>Rent a car</Button>
+        </Link>
 
         <Link to="/auth">
-          {" "}
-          <Button>Login</Button>{" "}
+          <Button>Login</Button>
         </Link>
       </Section2>
     </Container>

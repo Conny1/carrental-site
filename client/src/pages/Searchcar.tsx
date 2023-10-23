@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import logo from "../assets/logo.png";
-import { SelectCar } from "../components";
+import { LealfletMap, SelectCar } from "../components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,6 +74,9 @@ const Results = styled.div`
 `;
 const Maps = styled.div`
   width: 40%;
+  min-height: 100vh;
+  outline: 1px solid red;
+  margin-bottom: 10px;
 `;
 const Available = styled.div`
   flex: 1;
@@ -110,7 +113,9 @@ const Searchcar = () => {
           <SelectCar />
           <SelectCar />
         </Available>
-        <Maps>maps</Maps>
+        <Maps>
+          <LealfletMap />
+        </Maps>
       </Results>
     </Container>
   );

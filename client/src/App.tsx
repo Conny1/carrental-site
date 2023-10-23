@@ -1,10 +1,21 @@
 import "./App.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import { styled } from "styled-components";
-import { AddorUpdate, Booked, Car, Rented, Searchcar } from "./pages";
+import {
+  AddorUpdate,
+  Booked,
+  Car,
+  Dashboard,
+  NotFound,
+  Payment,
+  Profile,
+  Rented,
+  Searchcar,
+} from "./pages";
 import Auth from "./pages/Auth";
+import { Approvecars, Manageusers } from "./pages/admin";
 
 const Container = styled.div``;
 function App() {
@@ -18,6 +29,10 @@ function App() {
       element: <Searchcar />,
     },
     {
+      path: "/profile",
+      element: <Profile />,
+    },
+    {
       path: "/car",
       element: <Car />,
     },
@@ -29,6 +44,7 @@ function App() {
       path: "/booked",
       element: <Booked />,
     },
+
     {
       path: "/rented",
       element: <Rented />,
@@ -36,6 +52,33 @@ function App() {
     {
       path: "/addorupdate",
       element: <AddorUpdate />,
+    },
+    {
+      path: "/payment",
+      element: <Payment />,
+    },
+    {
+      path: "/admin",
+      element: (
+        <>
+          <Dashboard />
+          <Outlet />
+        </>
+      ),
+      children: [
+        {
+          path: "manage-users",
+          element: <Manageusers />,
+        },
+        {
+          path: "approve-cars",
+          element: <Approvecars />,
+        },
+      ],
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     },
   ]);
   return (

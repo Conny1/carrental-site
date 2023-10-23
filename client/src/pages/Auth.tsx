@@ -5,54 +5,65 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   height: 100vh;
 `;
-const Item = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 40%;
+
+const AuthBox = styled.div`
+  background-color: #f4f4f4;
+  border-radius: 10px;
   padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
 `;
 
 const Input = styled.input`
-  height: 30px;
-  background-color: transparent;
-  border: none;
-  outline: 1px solid #9f9f9f;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 15px;
+  outline: none;
 `;
-const H3 = styled.h3`
-  line-height: 0px;
-`;
+
 const Button = styled.button`
-  cursor: pointer;
-  max-width: 100px;
+  background-color: #0074cc;
+  color: #fff;
   border: none;
-  padding: 5px;
-  background-color: #000;
-  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
 `;
+
+const H3 = styled.h3`
+  font-size: 24px;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+`;
+
 const Auth = () => {
   return (
     <Container>
       <H3>Log in</H3>
-
-      <Item>
+      <AuthBox>
         <Input type="text" placeholder="Email" />
-        <Input type="password" placeholder="password" />
+        <Input type="password" placeholder="Password" />
         <Button>Login</Button>
-      </Item>
-
+      </AuthBox>
       <H3>Or</H3>
-      <H3>SignUp</H3>
-      <Item>
+      <H3>Sign Up</H3>
+      <AuthBox>
         <Input type="text" placeholder="Name" />
         <Input type="text" placeholder="Email" />
-
-        <Input type="password" placeholder="password" />
-        <Button>Signup</Button>
-      </Item>
+        <Input type="password" placeholder="Password" />
+        <Button>Sign Up</Button>
+      </AuthBox>
     </Container>
   );
 };

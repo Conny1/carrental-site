@@ -1,30 +1,31 @@
-import { styled } from "styled-components";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import { Nav, Footer } from "../components";
 import headerimg from "../assets/headerimg.jpeg";
 
 const Container = styled.div`
   width: 100%;
-  /* outline: 1px solid yellow; */
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+
 const NavBar = styled.div`
   width: 100%;
 `;
+
 const Header = styled.div`
-  /* outline: 1px solid red; */
   width: 100%;
   min-height: 500px;
   display: flex;
   justify-content: center;
-  background-size: contain;
-  background: url(${headerimg});
+  background-size: cover;
+  background-image: url(${headerimg});
   background-position: center;
   background-repeat: no-repeat;
 `;
+
 const Dates = styled.div`
-  outline: 1px solid gainsboro;
   margin-top: 30px;
   border-radius: 20px;
   background: linear-gradient(
@@ -39,12 +40,14 @@ const Dates = styled.div`
   justify-content: space-evenly;
   align-items: center;
   overflow: hidden;
+
   input {
     height: 30px;
     flex: 1;
     border: none;
     border-right: 1px solid gainsboro;
   }
+
   label {
     margin-left: 3px;
     color: #fff;
@@ -52,13 +55,21 @@ const Dates = styled.div`
     font-weight: bold;
   }
 `;
+
 const Button = styled.button`
   width: fit-content;
   font-size: 20px;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 `;
 
 const Slogan = styled.div`
   margin-top: 50px;
+
   p {
     font-weight: bold;
     font-size: 30px;
@@ -72,23 +83,29 @@ const CarFilters = styled.div`
   overflow: hidden;
   width: 70%;
   align-self: center;
-  /* outline: 1px solid red; */
   margin-bottom: 50px;
-  height: auto;
   justify-content: space-between;
 `;
 
 const Item = styled.div`
   width: 30%;
   min-width: 200px;
-  outline: 1px solid gainsboro;
   height: 200px;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
+  overflow: hidden;
+
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+  }
+
+  p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
   }
 `;
 
@@ -105,14 +122,16 @@ const Home = () => {
           <input type="date" name="From" id="from" placeholder="Start date" />
           <label htmlFor="Until">Until:</label>
           <input type="date" name="Until" id="until" placeholder="End Date" />
-          <Button>🔍</Button>
+          <Link to="search">
+            <Button>🔍</Button>
+          </Link>
         </Dates>
       </Header>
       <Slogan>
         <p>"Quality Cars, Unforgettable Journeys."</p>
       </Slogan>
       <p style={{ textAlign: "start", fontSize: "20px", fontWeight: "bold" }}>
-        Browse by make"
+        Browse by make
       </p>
       <CarFilters>
         <Item>
@@ -157,7 +176,7 @@ const Home = () => {
       </CarFilters>
 
       <p style={{ textAlign: "start", fontSize: "20px", fontWeight: "bold" }}>
-        Browse by Location"
+        Browse by Location
       </p>
 
       <CarFilters>

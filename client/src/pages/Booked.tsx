@@ -1,17 +1,32 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { BookedCar, Nav } from "../components";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const NavBar = styled.div`
   width: 100%;
 `;
-const BookedCars = styled.div``;
+
+const BookedCars = styled.div`
+  text-align: center;
+  padding: 20px;
+`;
+
 const CarList = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
+`;
+
+const Title = styled.h3`
+  font-size: 24px;
+  margin: 0;
 `;
 
 const Booked = () => {
@@ -21,7 +36,7 @@ const Booked = () => {
         <Nav />
       </NavBar>
       <BookedCars>
-        <h3>Your Booked cars</h3>
+        <Title>Your Booked Cars</Title>
         <CarList>
           <BookedCar />
           <BookedCar />

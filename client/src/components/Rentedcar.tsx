@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
@@ -6,14 +6,13 @@ const Container = styled.div`
   gap: 10px;
   color: #000;
   flex-direction: column;
-  /* outline: 1px solid red; */
 `;
+
 const CarImage = styled.div`
   width: 100%;
-  height: 100%;
+  height: 200px;
   border-radius: 10px;
   overflow: hidden;
-  /* outline: 1px solid red; */
   img {
     width: 100%;
     height: 100%;
@@ -31,10 +30,10 @@ const CarInfo = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
+
 const Carname = styled.p`
   font-size: 20px;
   font-weight: bold;
-
   span {
     font-size: 15px;
     background: linear-gradient(
@@ -45,6 +44,15 @@ const Carname = styled.p`
     padding: 5px;
     border-radius: 5px;
   }
+`;
+
+const Button = styled.button`
+  cursor: pointer;
+  max-width: 100px;
+  border: none;
+  padding: 5px;
+  background-color: #000;
+  color: #ffffff;
 `;
 
 const RentedCar = () => {
@@ -58,9 +66,9 @@ const RentedCar = () => {
       </CarImage>
       <CarInfo>
         <Carname>Nissan juke...</Carname>
-        <button>Active</button>
-        <button>Update</button>
-        <button>Delete</button>
+        <Button>Active</Button>
+        <Button>Update</Button>
+        <Button>Delete</Button>
       </CarInfo>
     </Container>
   );

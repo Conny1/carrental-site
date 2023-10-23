@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
   gap: 10px;
   color: #000;
+  text-decoration: none; /* Remove the underline from links */
 `;
+
 const CarImage = styled.div`
   width: 40%;
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
-  /* outline: 1px solid red; */
   img {
     width: 100%;
     height: 100%;
@@ -24,15 +25,14 @@ const CarInfo = styled.div`
   border-left: none;
   border-radius: 10px;
   flex: 1;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 `;
-const Carname = styled.p`
+
+const CarName = styled.p`
   font-size: 20px;
   font-weight: bold;
-
   span {
     font-size: 15px;
     background: linear-gradient(
@@ -44,13 +44,34 @@ const Carname = styled.p`
     border-radius: 5px;
   }
 `;
+
 const Item = styled.div`
   text-align: start;
 `;
 
+const Rating = styled.p`
+  font-size: 16px;
+  color: #666;
+`;
+
+const PriceContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Price = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+`;
+
+const EstimateTotal = styled.p`
+  font-size: 16px;
+  color: #666;
+`;
+
 const SelectCar = () => {
   return (
-    <Link to="/car">
+    <Link to="/car" style={{ textDecoration: "none" }}>
       <Container>
         <CarImage>
           <img
@@ -60,16 +81,17 @@ const SelectCar = () => {
         </CarImage>
         <CarInfo>
           <Item>
-            <Carname>
-              Nissan juke.... <span> save </span>
-            </Carname>
-            <p>5.0⭐ </p>
+            <CarName>
+              Nissan Juke... <span>save</span>
+            </CarName>
+            <Rating>5.0⭐</Rating>
             <p>Nairobi</p>
           </Item>
-
-          <Item style={{ display: "flex", justifyContent: "space-between" }}>
-            <p>Ksh 2000 /day</p>
-            <p> $2000 esti. total </p>
+          <Item>
+            <PriceContainer>
+              <Price>Ksh 2000 /day</Price>
+              <EstimateTotal>$2000 esti. total</EstimateTotal>
+            </PriceContainer>
           </Item>
         </CarInfo>
       </Container>
